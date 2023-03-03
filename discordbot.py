@@ -27,6 +27,8 @@ TOKEN = os.environ['TOKEN']
 intents = discord.Intents().all()
 client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
+logtimeline = datetime.now()
+
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=discord.Game("나 벌써 2.0이야!"))

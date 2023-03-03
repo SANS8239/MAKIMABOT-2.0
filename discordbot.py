@@ -27,7 +27,7 @@ TOKEN = os.environ['TOKEN']
 intents = discord.Intents().all()
 client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
-logtimeline = datetime.now()
+
 
 @client.event
 async def on_ready():
@@ -86,10 +86,10 @@ async def exit_voice(ctx):
     try :
         await client.voice_clients[0].disconnect()
         await ctx.reply(embed = discord.Embed(description = "나 갈게~", color = 0xa53939))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마봉인")
+
     except :
         await ctx.reply("음성채널에서 이미 나갔어~")
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마봉인 but failed cause client already off from voice channel")
+
 
 @client.command(aliases = ['마키마노래', 'akzlakshfo'])
 async def makima_play_url(ctx, url):
@@ -173,7 +173,7 @@ async def makima_rock_scissor_paper(ctx, msg) :
         await ctx.channel.send("가위")
     else :
         await ctx.channel.send("너는 날 이길 수 없다!")
-    print(f"{logtimeline} : {str(ctx.author)} issued command /마키마묵찌빠 of {msg}")
+
 
 @client.command(aliases = ['마키마운세', 'akzlakdnstp'])
 async def makima_l(ctx, content) :
@@ -185,19 +185,19 @@ async def makima_l(ctx, content) :
     행운 = ['운이 지지리도 없어서 매번 벌칙내기 하면 걸리기만 하는 운', '운이 나쁜 편은 아닌데 매번 내기만 하면 지는 운', '운이 겁나 좋아서 3연 로또 당첨은 식은 죽 먹기인 운', '운이 딱 반반인 운 그냥 무난함', '운이 더럽게 안좋아서 도박같은거만 하면 돈 다잃고 파산할 운', '운이 좋아 하는 일 족족 해낼 수 있는 운']
     if content == '애정' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = '당신의 애정운은?',description = choice(애정)))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마운세 of {content}")
+
     elif content == '재물' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = '당신의 재물운은?',description = choice(재물)))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마운세 of {content}")
+
     elif content == '장래' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = "당신의 장래운은?", description = choice(장래)))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마운세 of {content}")
+
     elif content == '행운' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = "당신의 행운은?", description = choice(행운)))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마운세 of {content}")
+
     else :
         await ctx.channel.send("이상한 운세는 안봐줘~")
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마운세 of {content} but failed cause unexpected exception occurred")
+
     
         
 @client.command(aliases = ['마키마게임', 'akzlakrpdla'])
@@ -648,6 +648,7 @@ async def makimagame1(ctx, mode, diff) :
 
     else :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "해당 모드는 현재 지원하지 않습니다(타자게임, 암산게임, 한자게임)"))
+        
 @client.command(aliases = ['마키마지배', 'akzlakwlqo'])
 async def kill(ctx, nickname: discord.Member) :
     urllib.request.urlretrieve("https://i.ytimg.com/vi/G1hMtZlVKv4/hqdefault.jpg", "explain.jpg")
@@ -662,9 +663,8 @@ async def kill(ctx, nickname: discord.Member) :
                 msg = await client.wait_for('message', check=check, timeout=times)
         except asyncio.TimeoutError :
             await ctx.send("에이 모야 시시하게")
-            print(f"{logtimeline} : {str(ctx.author)} issued command /마키마지배 to {nickname} but timesouts")
         else :
-            print(f"{logtimeline} : {str(ctx.author)} issued command /마키마지배 to {nickname}")
+
             embed = discord.Embed(color = 0xa53939)
             embed.set_image(url = "attachment://img.jpg")
             await ctx.channel.send(file=img)
@@ -673,7 +673,7 @@ async def kill(ctx, nickname: discord.Member) :
             await nickname.edit(mute=False)
     else :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, description = "나보다 약한 자의 말 따윈 듣지 않아"))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마지배 to {nickname} but failed cause missing permissions")
+
 
 
 @client.command(aliases = ['마키마빵', 'akzlakQkd'])
@@ -689,9 +689,9 @@ async def mute(ctx, nickname: discord.Member) :
                 msg = await client.wait_for('message', check=check, timeout=times)
         except asyncio.TimeoutError :
             await ctx.send("에이 모야 시시하게")
-            print(f"{logtimeline} : {str(ctx.author)} issued command /마키마빵 to {nickname} but timeouts")
+
         else :
-            print(f"{logtimeline} : {str(ctx.author)} issued command /마키마빵 to {nickname}")
+
             embed1 = discord.Embed(color = 0xa53939)
             embed1.set_image(url = "attachment://explain1.jpg")
             await ctx.channel.send(file=img1)
@@ -699,7 +699,7 @@ async def mute(ctx, nickname: discord.Member) :
             await nickname.edit(voice_channel=None)
     else :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, description = "나 보다 약한 자의 말 따윈 듣지 않아"))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마빵 but failed cuase missing permissions")
+
 
 
 
@@ -712,7 +712,7 @@ async def announcement (ctx, tit, cont) :
         result = cont.replace('_',' ')
         chann = client.get_channel(1066219293995438170)
         await chann.send(embed = discord.Embed(title = str(tit), description = str(result), color = 0xa53939))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마공지 to Announce Channel contain {result}")
+
     else :
         await ctx.reply("나 보다 약한 녀석의 말 따윈 듣지 않아")
 
@@ -725,7 +725,7 @@ async def announce(ctx, chanid, tit, cont) :
         titles = tit.replace('_', ' ')
         cha = client.get_channel(int(chanid))
         await cha.send(embed = discord.Embed(title = titles, description = re, color = 0xa53939))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마알림 to {chanid} contains {re}")
+
     else :
         await ctx.reply('지배의 악마에게 이런 잡일 시키지 마라!')
 
@@ -738,7 +738,7 @@ async def annou(ctx, chanid, cont) :
         re = cont.replace('_', ' ')
         cha = client.get_channel(int(chanid))
         await cha.send(re)
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마알림 to {chanid} contains {re}")
+
     else :
         await ctx.reply('지배의 악마에게 이런 잡일 시키지 마라!')
 
@@ -763,7 +763,7 @@ async def helps (ctx) :
     embed.add_field(name = "/마키마뽑기 [number: int]", value = "행운의 인물을 뽑습니다", inline = False)
     embed.add_field(name = "/마키마사다리타기 [number: int] [numbers: list]", value = "지정된 횟수 만큼 랜덤한 숫자를 뽑습니다", inline = False)
     await ctx.reply(embed=embed)
-    print(f"{logtimeline} : {str(ctx.author)} issued command /마키마도움")
+
    
 @client.command(aliases = ['마키GG', '마키gg', '마킿ㅎ', '마키마GG', 'akzlgg', 'akzlGG'])
 async def makigg (ctx, game, username) :
@@ -925,7 +925,7 @@ async def makimarank(ctx, value) :
                 jpoprank += 1
 
         await ctx.channel.send(embed = embedjpop)
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마노래차트 jpop")
+
 
     elif value == 'kpop' or value == 'KPOP':
         daytime = datetime.now()
@@ -947,7 +947,6 @@ async def makimarank(ctx, value) :
                 kpoprank += 1      
 
         await ctx.channel.send(embed = embedkpop)
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마노래차트 kpop")
 
     elif value == 'pop' or value == 'POP' :
         daytime = datetime.now()
@@ -969,7 +968,7 @@ async def makimarank(ctx, value) :
                 poprank += 1
         
         await ctx.channel.send(embed = embedpop)
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마노래차트 pop")
+
 
 
 
@@ -987,7 +986,7 @@ async def change_nick(ctx, membername: discord.Member, *, newname) :
             await membername.edit(nick = f"{result_name} {members_database[str(ctx.author)]}")
         else :
             await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "데이터베이스에 등록되어 있지않거나 잘못된 이름입니다. 개발자에게 문의 해 주세요"))
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마별명변경 of {membername} to {result_name}")
+
 
 @client.command(aliases = ['마키마뽑기'])
 async def random_player(ctx, num) :

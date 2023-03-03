@@ -987,21 +987,6 @@ async def change_nick(ctx, membername: discord.Member, *, newname) :
             await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "데이터베이스에 등록되어 있지않거나 잘못된 이름입니다. 개발자에게 문의 해 주세요"))
         print(f"{logtimeline} : {str(ctx.author)} issued command /마키마별명변경 of {membername} to {result_name}")
 
-
-
-@client.command(aliases = ['마키마활동점수', 'akzlakghkfehdwjatn'])
-async def check_actpoint (ctx, member: discord.Member) :
-    try :
-        embed = discord.Embed(color = 0xa53939, title = f"{member}님의 활동 점수", description = f"{activity_point[str(member)]}점")
-        embed.set_footer(text = "1주일 마다 역할을 변경할 때 활동 점수가 높은 순서로 추첨을 합니다")
-        await ctx.channel.send(embed = embed)
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키마활동점수 of {member}")
-    except :
-        embed = discord.Embed(color = 0xa53939, title = f"Error Forbidden 401 : {member} is not logged database or parameter is not assigned.")
-        await ctx.channel.send(embed = embed)
-
-
-
 @client.command(aliases = ['마키마뽑기'])
 async def random_player(ctx, num) :
     database_member = ['米津玄師(よねづけんし)#9185', '카직스 장인#6332', '박조비#5083', 'sdttwz#5167', 'minhyuk#4379', 'ANG#5105', '오민규#7426', 'Aarumida#1311', '김가을#2611', '딕코#4641', '암살장인#9241', '메타몽#8158', '박희영#5169', '붉점#0865', '악어고기#8198', '안태현#1169', '이건희#5624', '찍히지 않았읍니다#6561', '튀르이#7961', '마고가아닙니다#7719', '할게없어#8500', '음😕#7004']

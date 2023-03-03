@@ -83,12 +83,10 @@ async def check_client(ctx) :
 
 @client.command(aliases = ['마키마봉인', 'akzlakqhddls'])
 async def exit_voice(ctx):
-    try :
-        await client.voice_clients[0].disconnect()
-        await ctx.reply(embed = discord.Embed(description = "나 갈게~", color = 0xa53939))
+    await client.voice_clients[0].disconnect()
+    await ctx.reply(embed = discord.Embed(description = "나 갈게~", color = 0xa53939))
 
-    except :
-        await ctx.reply("음성채널에서 이미 나갔어~")
+
 
 
 @client.command(aliases = ['마키마노래', 'akzlakshfo'])

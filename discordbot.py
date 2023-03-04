@@ -31,7 +31,7 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("마키마 양파 생강 "))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("PUBG: BATTLEGORUNDS"))
 
 
 ## commands ##
@@ -153,24 +153,17 @@ async def makima_resume(ctx):
 
 @client.command(aliases = ['마키마묵찌빠', 'akzlakanrWLQK'])
 async def makima_rock_scissor_paper(ctx, msg) :
-    if msg == "가위":
-        await ctx.channel.send("바위")
-    elif msg == "주먹":
-        await ctx.channel.send("보자기")
-    elif msg == "보자기":
-        await ctx.channel.send("가위")
-    elif msg == "묵":
-        await ctx.channel.send("보자기")
-    elif msg == "빠":
-        await ctx.channel.send("가위")
-    elif msg == "찌":
-        await ctx.channel.send("바위")
-    elif msg == "바위":
-        await ctx.channel.send("보자기")
-    elif msg == "보":
-        await ctx.channel.send("가위")
+    rock = ['주먹', '바위', '묵']
+    scissor = ['가위', '찌']
+    paper = ['보', '보자기', '빠']
+    if msg in scissor:
+        await ctx.reply("바위")
+    elif msg in rock:
+        await ctx.reply("보자기")
+    elif msg in paper:
+        await ctx.reply("가위")
     else :
-        await ctx.channel.send("너는 날 이길 수 없다!")
+        await ctx.reply("너는 날 이길 수 없다!")
 
 
 @client.command(aliases = ['마키마운세', 'akzlakdnstp'])
@@ -749,7 +742,7 @@ async def helps (ctx) :
     embed.add_field(name = "/마키마게임 [game: 타자게임,암산게임,한자게임] [difficulty: 초보,중수,고수]", value = "마키마와 게임을 합니다", inline = False)
     embed.add_field(name = "/마키마소환", value = "현재 접속해 있는 음성 채널에 마키마를 불러냅니다", inline = False)
     embed.add_field(name = "/마키마봉인", value = "음성 채널에 있는 마키마를 내보냅니다", inline = False)
-    embed.add_field(name = "/마키GG [game: 롤,배그] [playername]", value = "해당 유저의 롤 정보를 보여줍니다", inline = False)
+    embed.add_field(name = "/마키GG [game: 롤,배그] [playername]", value = "해당 유저의  정보를 보여줍니다", inline = False)
     embed.add_field(name = "/마키마별명변경 [@mention.member] [newname]", value = "해당하는 유저의 별명을 변경합니다", inline = False)
     embed.add_field(name = "/마키마노래차트 [value: jpop,kpop,pop]", value = "해당하는 종류의 노래 차트를 보여줍니다(Bugs!)", inline = False)
     embed.add_field(name = "/마키마활동점수 [@mention.member]", value = "해당 멤버의 활동 점수를 보여줍니다", inline = False)

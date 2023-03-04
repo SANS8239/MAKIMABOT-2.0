@@ -31,7 +31,7 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("PUBG: BATTLEGORUNDS"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("PLAYERUNKNOWN'S BATTLEGORUNDS"))
 
 
 ## commands ##

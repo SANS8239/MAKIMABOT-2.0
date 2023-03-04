@@ -31,7 +31,7 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, discord.Streaming(name="해피로 ", url="https://youtu.be/qkH_xKFrXok"))
+    await client.change_presence(status=discord.Status.online, discord.Game(name="PLAYERUNKNOWN'S BATTLEGROUNDS"))
 
 
 ## commands ##

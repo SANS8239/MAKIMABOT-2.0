@@ -102,20 +102,8 @@ async def makima_play_url(ctx, url):
         stream.download()
         source = await discord.FFmpegOpusAudio.from_probe(stream.default_filename)
         voice.play(source)
-        if 'https://www.youtube.com/watch?v=' in url :
-            response = requests.get(url)
-        elif 'https://youtu.be/' in url :
-            results = url.replace('https://youtu.be/', '')
-            link = 'https://www.youtube.com/watch?v=' + results
-            response = requests.get(link)
-        html = response.content
-        bs = BeautifulSoup(html, "html.parser")
-        title = bs.find('title').text
-        embed = discord.Embed(color = 0xa53939, description = f"지금 이 노래! {title.replace('YouTube', '')} 을(를) 불러줄게~")
-        embed.set_footer(text = f"영상 : {url}")
-        await ctx.reply(embed=embed)
+
         await asyncio.sleep(0.5)
-        await ctx.message.delete()
         while voice.is_playing() :
             await asyncio.sleep(1)
         

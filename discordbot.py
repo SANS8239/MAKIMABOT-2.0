@@ -31,7 +31,7 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("나 벌써 2.0이야!"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("마키마 양파 생강 "))
 
 
 ## commands ##

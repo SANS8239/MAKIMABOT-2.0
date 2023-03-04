@@ -91,7 +91,7 @@ async def exit_voice(ctx):
 
 @client.command(aliases = ['마키마노래', 'akzlakshfo'])
 async def makima_play_url(ctx, url): 
-        voice_channel = message.author.voice.channel
+        voice_channel = ctx.author.voice.channel
         if voice_channel is None:
             await message.channel.send("나에게 노래를 부르게 하고 싶으면 먼저 음성채널에 접속해 줘")
             return

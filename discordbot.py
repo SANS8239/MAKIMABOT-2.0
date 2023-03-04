@@ -90,17 +90,28 @@ async def exit_voice(ctx):
 
 
 @client.command(aliases = ['마키마노래', 'akzlakshfo'])
-async def makima_play_url(ctx, url):
-    if ctx.author.voice is None:
-        await ctx.reply("나에게 노래를 부르게 하고 싶으면 먼저 음성채널에 접속해 줘")
-        return
-    else :
-        
-        voice = await ctx.author.voice.channel.connect()
-        yt = pt.YouTube(url)
-        stream = yt.streams.filter(only_audio=True).first()
-        stream.download()
-        source = await discord.FFmpegOpusAudio.from_probe(stream.default_filename)
+async def makima_play_url(ctx, url): 
+        voice_channel = message.author.voice.channel
+        if voice_channel is None:
+            await message.channel.send("나에게 노래를 부르게 하고 싶으면 먼저 음성채널에 접속해 줘")
+            return
+
+        voice = await voice_channel.connect()
+
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192'
+            }]
+        }
+
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(f"ytsearch:{query}", download=False)['entries'][0]
+            url = info['url']
+            source = await discord.FFmpegOpusAudio.from_probe(url)
+
         voice.play(source)
         if 'https://www.youtube.com/watch?v=' in url :
             response = requests.get(url)

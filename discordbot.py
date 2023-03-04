@@ -658,7 +658,7 @@ async def kill(ctx, nickname: discord.Member) :
     if str(ctx.author) == "米津玄師(よねづけんし)#9185" or str(ctx.author) == "카직스 장인#6332" or str(ctx.author) == "박희영#5169" :
 
         times = 10
-        await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = f"『{nickname}』이라고 말해, 어서"))
+        await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = f"『{nickname}』 이라고 말하렴"))
         def check (m) :
             return m.author == ctx.message.author and m.channel == ctx.message.channel
         try :
@@ -702,7 +702,17 @@ async def mute(ctx, nickname: discord.Member) :
     else :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, description = "나 보다 약한 자의 말 따윈 듣지 않아"))
 
-
+@client.command(aliases = ['마키마완전지배', 'akzlakdhkswjswlqo'])
+async def makima_loveu (ctx, member: discord.Member) :
+     if str(ctx.author) == "米津玄師(よねづけんし)#9185" or str(ctx.author) == "카직스 장인#6332" or str(ctx.author) == "박희영#5169" :
+        voice_channels = ctx.guild.voice_channels
+        for i in range (1, 5, 1) :
+            random_channel = random.choice(voice_channels)
+            await member.move_to(random_channel)
+            await asyncio.sleep(randint(1,2))
+        
+    else :
+        await ctx.channel.send(embed = discord.Embed(color = 0xa53939, description = "나 보다 약한 자의 말 따윈 듣지 않아"))
 
 
 @client.command(aliases = ['마키마공지', 'akzlakrhdwl'])

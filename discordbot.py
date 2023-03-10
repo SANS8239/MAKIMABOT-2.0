@@ -26,7 +26,7 @@ TOKEN = os.environ['TOKEN']
 
 intents = discord.Intents().all()
 client = commands.Bot(command_prefix=PREFIX, intents = intents)
-
+ㅁ
 
 
 @client.event
@@ -752,7 +752,7 @@ async def helps (ctx) :
     embed.add_field(name = "/마키마게임 [종류: 타자게임,암산게임,한자게임] [난이도: 초보,중수,고수]", value = "마키마와 게임을 합니다", inline = False)
     embed.add_field(name = "/마키마소환", value = "현재 접속해 있는 음성 채널에 마키마를 불러냅니다", inline = False)
     embed.add_field(name = "/마키마봉인", value = "음성 채널에 있는 마키마를 내보냅니다", inline = False)
-    embed.add_field(name = "/마키GG [game: 롤,배그] [플레이어이름]", value = "해당 유저의  정보를 보여줍니다", inline = False)
+    embed.add_field(name = "/마키GG [: 롤,배그] [플레이어이름]", value = "해당 유저의  정보를 보여줍니다", inline = False)
     embed.add_field(name = "/마키마별명변경 [멘션] [이름]", value = "해당하는 유저의 별명을 변경합니다", inline = False)
     embed.add_field(name = "/마키마노래차트 [종류: jpop,kpop,pop]", value = "해당하는 종류의 노래 차트를 보여줍니다(Bugs!)", inline = False)
     embed.add_field(name = "/마키마활동점수 [멘션]", value = "해당 멤버의 활동 점수를 보여줍니다", inline = False)

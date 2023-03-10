@@ -31,9 +31,9 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("와 체인소 ! 팬이에요 !"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("「사랑해」라는 말로 남음 속이고, 살아가면서...."))
 
-
+ 
 ## commands ##
 
 
@@ -179,7 +179,6 @@ async def makima_rock_scissor_paper(ctx, msg) :
 
 @client.command(aliases = ['마키마운세', 'akzlakdnstp'])
 async def makima_l(ctx, content) :
-    await ctx.message.delete()
     await ctx.channel.send(embed = discord.Embed(title = "모든 운세는 순수히 랜덤한 결과로 결정 됩니다. 너무 맹신하지 마세요", color = 0xa53939))
     애정 = ['무난할 것 같지만, 매우 큰 이별을 맞이하고 절망에 빠집니다', '정말 좋네요, 진심으로 사랑하는 사람과 만나 영원히 살게 됩니다', '애인에게 배신을 당하고서 헤어지는 안좋은 결말이네요', '마치 자기 자신인듯 마음이 척척 잘맞는 애인과 결혼하여 무난한 생활을 살게 됩니다', '응 모솔 ㅋ', '거울을 봐라']
     재물 = ['돈은 많지만, 쓸데가 없네요 펑펑 벌게됩니다', '거지는 아니지만 살아갈 수 있을 만큼 벌게 됩니다', '돈이 거의 없어 빚에 시달리며 살게 됩니다', '남부럽지 않게 더도말고 덜도말고 적당히 벌고 하고픈 일 할수  있는 만큼 법니다', '누더기 옷을 입고, 꿰멘 양말을 겨우 신는 힘든 생활이 됩니다']

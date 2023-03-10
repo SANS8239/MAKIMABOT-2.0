@@ -1003,7 +1003,6 @@ async def member(ctx, num, list) :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = f"행운의 주인공 {index}번째는?",  description = f"{choice(ladders)}"))
 
 
-
 try:
     client.run(TOKEN)
 except discord.errors.LoginFailure as e:

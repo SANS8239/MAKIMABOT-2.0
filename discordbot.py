@@ -26,7 +26,7 @@ TOKEN = os.environ['TOKEN']
 
 intents = discord.Intents().all()
 client = commands.Bot(command_prefix=PREFIX, intents = intents)
-ㅁ
+
 
 
 @client.event

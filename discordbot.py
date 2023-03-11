@@ -31,8 +31,7 @@ client = commands.Bot(command_prefix=PREFIX, intents = intents)
 
 @client.event
 async def on_ready():
-    activity = Activity(type=ActivityType.listening, name="米津玄師 - KICK BACK")
-    await bot.change_presence(activity=activity)
+    await bot.change_presence(status=Status.online, activity=discord.Game("내가 길러줄게... 우리만의 세상에서.. 행복하게.. 살자?.."))
     
 
  

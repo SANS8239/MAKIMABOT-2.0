@@ -163,7 +163,7 @@ async def makima_resume(ctx):
     else :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "아무것도 멈춘 기억이 없고 부른 기억도 없는데?"))
 
-@client.command(aliases = ['마키마묵찌빠', 'akzlakanrWLQK'])
+@client.command(aliases = ['마키마묵찌빠', 'akzlakanrWLQK'], help = "마키마와 가위바위보 내기를 ")
 async def makima_rock_scissor_paper(ctx, msg) :
     rock = ['주먹', '바위', '묵']
     scissor = ['가위', '찌']

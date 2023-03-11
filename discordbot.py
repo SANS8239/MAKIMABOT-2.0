@@ -857,7 +857,7 @@ async def makigg (ctx, game, username) :
         elif 'challenger' in ranktxt :
             embed_lol.set_thumbnail(url = 'https://opgg-static.akamaized.net/images/medals_new/challenger.png?image=q_auto,f_webp,w_144&amp;v=1675751623266')
         await ctx.reply(embed=embed_lol) # reply embed 
-        print(f"{logtimeline} : {str(ctx.author)} issued command /마키GG of {username}") 
+        
     
     elif game == '배그' or game == '배틀그라운드' or game == 'battlegrounds' :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "미안해 아직 지원하지 않는 기능이야"))

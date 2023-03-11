@@ -163,11 +163,11 @@ async def makima_resume(ctx):
     else :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "아무것도 멈춘 기억이 없고 부른 기억도 없는데?"))
 
-@client.command(aliases = ['마키마묵찌빠', 'akzlakanrWLQK'], help = "마키마와 가위바위보 내기를 ")
+@client.command(aliases = ['마키마묵찌빠', 'akzlakanrWLQK'])
 async def makima_rock_scissor_paper(ctx, msg) :
-    rock = ['주먹', '바위', '묵']
-    scissor = ['가위', '찌']
-    paper = ['보', '보자기', '빠']
+    rock = ['주먹', '바위', '묵', 'wnajr', 'qkdnl', 'anr']
+    scissor = ['가위', '찌', 'rkdnl', 'Wl']
+    paper = ['보', '보자기', '빠', 'qh', 'qhwkrl', 'Qk']
     if msg in scissor:
         await ctx.reply("바위")
     elif msg in rock:
@@ -185,16 +185,16 @@ async def makima_l(ctx, content) :
     재물 = ['돈은 많지만, 쓸데가 없네요 펑펑 벌게됩니다', '거지는 아니지만 살아갈 수 있을 만큼 벌게 됩니다', '돈이 거의 없어 빚에 시달리며 살게 됩니다', '남부럽지 않게 더도말고 덜도말고 적당히 벌고 하고픈 일 할수  있는 만큼 법니다', '누더기 옷을 입고, 꿰멘 양말을 겨우 신는 힘든 생활이 됩니다']
     장래 = ['원하는 꿈을 이루고 평생직장을 가져 살아가게 됩니다', '원하는 꿈을 이루진 못하였지만 남부럽지 않은 삶을 살아가게 됩니다', '자신이 자신있는 분야에서 크게 성공하여 이름을 남기며 살아갑니다', '주식과 도박에 빠져 우울한 삶을 살게 됩니다', '안좋은 길로 걸어 남을 괴롭히며 사는 삶이 됩니다', '해외에서는 유명한 사업가가 됩니다']   
     행운 = ['운이 지지리도 없어서 매번 벌칙내기 하면 걸리기만 하는 운', '운이 나쁜 편은 아닌데 매번 내기만 하면 지는 운', '운이 겁나 좋아서 3연 로또 당첨은 식은 죽 먹기인 운', '운이 딱 반반인 운 그냥 무난함', '운이 더럽게 안좋아서 도박같은거만 하면 돈 다잃고 파산할 운', '운이 좋아 하는 일 족족 해낼 수 있는 운']
-    if content == '애정' :
+    if content == '애정' or content == 'dowjd' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = '당신의 애정운은?',description = choice(애정)))
 
-    elif content == '재물' :
+    elif content == '재물' or content == 'woanf' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = '당신의 재물운은?',description = choice(재물)))
 
-    elif content == '장래' :
+    elif content == '장래' or content == 'wkdfo' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = "당신의 장래운은?", description = choice(장래)))
 
-    elif content == '행운' :
+    elif content == '행운' or content == 'goddns' :
         await ctx.channel.send(embed = discord.Embed(color = 0xa53939, title = "당신의 행운은?", description = choice(행운)))
 
     else :
@@ -752,7 +752,7 @@ async def helps (ctx) :
     embed.add_field(name = "/마키마게임 [종류: 타자게임,암산게임,한자게임] [난이도: 초보,중수,고수]", value = "마키마와 게임을 합니다", inline = False)
     embed.add_field(name = "/마키마소환", value = "현재 접속해 있는 음성 채널에 마키마를 불러냅니다", inline = False)
     embed.add_field(name = "/마키마봉인", value = "음성 채널에 있는 마키마를 내보냅니다", inline = False)
-    embed.add_field(name = "/마키GG [: 롤,배그] [플레이어이름]", value = "해당 유저의  정보를 보여줍니다", inline = False)
+    embed.add_field(name = "/마키GG [게임: 롤,배그,이터널 리턴, 발로란트, 오버워치 2] [플레이어이름]", value = "해당 유저의  정보를 보여줍니다", inline = False)
     embed.add_field(name = "/마키마별명변경 [멘션] [이름]", value = "해당하는 유저의 별명을 변경합니다", inline = False)
     embed.add_field(name = "/마키마노래차트 [종류: jpop,kpop,pop]", value = "해당하는 종류의 노래 차트를 보여줍니다(Bugs!)", inline = False)
     embed.add_field(name = "/마키마활동점수 [멘션]", value = "해당 멤버의 활동 점수를 보여줍니다", inline = False)
@@ -862,40 +862,6 @@ async def makigg (ctx, game, username) :
     
     elif game == '배그' or game == '배틀그라운드' or game == 'battlegrounds' :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "미안해 아직 지원하지 않는 기능이야"))
-        # profileurl_pubg = "https://pubg.op.gg/user/" + username # open urls
-        # html_pubg = urllib.request.urlopen(profileurl_pubg)
-
-        # bs_pubg = BeautifulSoup(html_pubg.read(), "html.parser") # set parser
-       
-        # ## crawling %username%'s recent match data ## 
-
-        # platform = bs_pubg.find("span", {"class" : "player-summary__platform-txt"}).text
-        # platform_ = platform.replace("Platform: ", "")
-        # avg_rank = bs_pubg.find("div", {"class" : "recent-matches__avg-rank"}).text
-        # avg_rank_1 = avg_rank.replace("#", "")
-        # avg_rank_ = str(round(float(avg_rank_1))).replace(".0", "")
-        # avg_kda = bs_pubg.find("div", {"class" : "recent-matches__stat-value--good"}).text
-        # avg_stat = bs_pubg.find_all("div", {"class" : "recent-matches__stat-value"})
-        # avg_dmg = avg_stat[1]
-        # avg_damage = avg_dmg['data-damage']
-        # avg_st = avg_stat[2]
-        # avg_survtime = avg_st['data-survive-time']
-        # average_damage = str(round(float(avg_damage), 0)).replace(".0", "")
-        # average_survivaltime = str(round(float(int(str(round(float(avg_survtime), 0)).replace(".0", "")) / 60), 0)).replace(".0", "")
-        # current_players = bs_pubg.find("a", {"class" : "current-user__count"}).text
-
-
-        # ## declaration embed and set fields ##
-        # embed_pubg = discord.Embed(color = 0xa53939, title = "최근 20경기 요약")
-        # embed_pubg.set_author(name = f"{username}")
-        # embed_pubg.set_thumbnail(url = 'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODEwMThfMTI3%2FMDAxNTM5ODUyOTMwMzAw.FgvGPP10LjuSUZU4Km3Umb9bS8RszFnwBwWXUNJmFBIg.nVyrHPQxPdARfP9jJ-n_B37xGEYHAeNPnZypyi63LVQg.JPEG.pmsil%2F1668647a6874c329e_png.jpg&type=sc960_832')
-        # embed_pubg.add_field(name = "이용 플랫폼", value = f"{platform_}")
-        # embed_pubg.add_field(name = " 평균 순위", value = f" {avg_rank_}위")
-        # embed_pubg.add_field(name = " 평균 KDA", value = f" {avg_kda}", inline = False)
-        # embed_pubg.add_field(name = "평균 피해량", value = f"{average_damage}")
-        # embed_pubg.add_field(name = "평균 생존 시간", value = f"{average_survivaltime}분")
-        # embed_pubg.set_footer(text = f"From Krafton: PUBG API: [{current_players}]")
-        # await ctx.reply(embed = embed_pubg) # reply embed
     elif game == '발로' or game == '발로란트' or game == 'valorant' :
         await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "미안해 아직 지원하지 않는 기능이야"))
     elif game == '옵치' or game == '옵치2' or game == '오버워치' or game == '오버워치2' :
@@ -906,7 +872,7 @@ async def makigg (ctx, game, username) :
 
 @client.command(aliases = ['마키마노래차트', 'akzlakshfockxm'])
 async def makimarank(ctx, value) :
-    if value == 'jpop' or value == 'JPOP' :
+    if value == 'jpop' or value == 'JPOP' or value == 'ㅓㅔㅐㅔ' or value == 'ㅓㅖㅒㅖ' :
         daytime = datetime.now()
         jpoprank = 1
         embedjpop = discord.Embed(color = 0xa53939, title = f"현 시간 {daytime.date()} 기준 J-POP 노래차트(1~25)")
@@ -928,7 +894,7 @@ async def makimarank(ctx, value) :
         await ctx.channel.send(embed = embedjpop)
 
 
-    elif value == 'kpop' or value == 'KPOP':
+    elif value == 'kpop' or value == 'KPOP' or value == 'ㅏㅔㅐㅔ' or value == 'ㅏㅖㅒㅖ' :
         daytime = datetime.now()
         kpoprank = 1
         embedkpop = discord.Embed(color = 0xa53939, title = f"현 시간 {daytime.date()} 기준 K-POP 노래 차트(1~25)")
@@ -949,7 +915,7 @@ async def makimarank(ctx, value) :
 
         await ctx.channel.send(embed = embedkpop)
 
-    elif value == 'pop' or value == 'POP' :
+    elif value == 'pop' or value == 'POP' or value == 'ㅔㅐㅔ' or value == 'ㅖㅒㅖ' :
         daytime = datetime.now()
         poprank = 1
         embedpop = discord.Embed(color = 0xa53939, title = f"현 시간 {daytime.date()} 기준 POP 노래 차트")
@@ -984,12 +950,12 @@ async def change_nick(ctx, membername: discord.Member, *, newname) :
         result_name = newname.replace("_", " ")
         names = list(members_database.keys())
         if str(membername) in names :
-            await membername.edit(nick = f"{result_name} {members_database[str(ctx.author)]}")
+            await membername.edit(nick = f"{result_name}{members_database[str(ctx.author)]}")
         else :
             await ctx.reply(embed = discord.Embed(color = 0xa53939, description = "데이터베이스에 등록되어 있지않거나 잘못된 이름입니다. 개발자에게 문의 해 주세요"))
 
 
-@client.command(aliases = ['마키마뽑기'])
+@client.command(aliases = ['마키마뽑기', 'akzlakQhqrl'])
 async def random_player(ctx, num) :
     database_member = ['米津玄師(よねづけんし)#9185', '카직스 장인#6332', '박조비#5083', 'sdttwz#5167', 'minhyuk#4379', 'ANG#5105', '오민규#7426', 'Aarumida#1311', '김가을#2611', '딕코#4641', '암살장인#9241', '메타몽#8158', '박희영#5169', '붉점#0865', '악어고기#8198', '안태현#1169', '이건희#5624', '찍히지 않았읍니다#6561', '튀르이#7961', '마고가아닙니다#7719', '할게없어#8500', '음😕#7004']
     for member in range(1, int(num)+1, 1) :
@@ -997,7 +963,7 @@ async def random_player(ctx, num) :
         await asyncio.sleep(0.2)
 
 
-@client.command(aliases = ['마키마사다리타기'])
+@client.command(aliases = ['마키마사다리타기', 'akzlaktkekflxkrl'])
 async def member(ctx, num, list) :
     ladders = list.split(',')
     for index in range(1, int(num)+1, 1) :
